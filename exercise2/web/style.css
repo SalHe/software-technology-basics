@@ -24,6 +24,26 @@
     width: 100px;
 }
 
+.form-item input {
+    padding: 5px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: #3498db 2px solid;
+}
+
+.form-item input:hover,
+.form-item input:active,
+.form-item input:focus {
+    padding: 5px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: #2980b9 3px solid;
+}
+
 .form-item {
     display: flex;
     justify-content: space-between;
@@ -96,4 +116,26 @@
 
 .avatar:hover {
     box-shadow: #3498db;
+}
+
+
+.form-item label input[type='checkbox'] + svg {
+    transition: all ease-in-out .2s;
+}
+
+.form-item label input[type='checkbox']:checked + svg {
+    fill: #8e44ad;
+}
+
+.radio-male input[type=radio] + svg,
+.radio-male input[type=radio] + svg {
+    fill: #2c3e50;
+}
+
+.radio-male input[type=radio]:checked + svg {
+    fill: #1296db;
+}
+
+.radio-female input[type=radio]:checked + svg {
+    fill: #d4237a;
 }
