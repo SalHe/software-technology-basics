@@ -7,10 +7,19 @@
 
 .container {
     height: 100vh;
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container:after {
+    z-index: -999999;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    background: url("./img/autumn.jpg");
+    filter: blur(2px);
 }
 
 .form-login {
@@ -18,6 +27,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    background: rgba(236, 240, 241, .7);
+    padding: 60px;
+    box-sizing: content-box;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
 }
 
 .form-item-label {
