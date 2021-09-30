@@ -87,6 +87,7 @@
     border: #3498db 1px solid;
     background-color: #ecf0f1;
     color: #3498db;
+    cursor: pointer;
 }
 
 .avatar {
