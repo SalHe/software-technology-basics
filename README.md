@@ -6,9 +6,11 @@
 
 - 实验1：http://127.0.0.1:8080/exercise1
   
-  ![实验1效果图](./img/exercise.gif)
+  ![实验1效果图](./img/exercise1.gif)
 
 - 实验2：http://127.0.0.1:8080/exercise2
+  
+  ![实验2效果图](./img/exercise2.gif)
 
 ## 如何运行
 
