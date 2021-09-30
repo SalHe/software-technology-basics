@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My First Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,33 +17,37 @@ hobbies:movie music bike sport
 
 <!-- write your code here -->
 
+<div class="container">
+    <form class="form-login" action="Servlet1" method="post">
+        <a class="avatar" href="https://www.github.com/SalHe" target="_blank"> </a>
 
-<form action="Servlet1" method="post">
-    <label>Username: <input type="text" name="Username" value="SalHe"/></label>
-    <br/>
-    <label>Password: <input type="password" name="Password" value="pwd123456"/> </label>
+        <div class="form-item">
+            <label class="form-item-label" for="username">Username: </label>
+            <input id="username" type="text" name="Username" value="SalHe"/>
+        </div>
+        <div class="form-item">
+            <label class="form-item-label" for="password">Password:</label>
+            <input id="password" type="password" name="Password" value="pwd123456"/>
+        </div>
 
-    <br/>
-    <br/>
+        <span style="margin-top: 5px">Gender:</span>
+        <div class="form-item flex-to-end">
+            <!-- 这里用label包裹起来是为了能在浏览器可以直接点文字就选中，而不需要点圈圈，下面的checkbox同理 -->
+            <label><input type="radio" name="gender" value="Male" checked/>Male</label>
+            <label><input type="radio" name="gender" value="Female"/>Female</label>
+        </div>
 
-    Gender: <br/>
-    <!-- 这里用label包裹起来是为了能在浏览器可以直接点文字就选中，而不需要点圈圈，下面的checkbox同理 -->
-    <label><input type="radio" name="gender" value="Male" checked/>Male</label>
-    <label><input type="radio" name="gender" value="Female"/>Female</label>
+        <span style="margin-top: 5px">Hobbies:</span>
+        <div class="form-item">
+            <label><input type="checkbox" name="hobbies" value="movie" checked/>Movie</label>
+            <label><input type="checkbox" name="hobbies" value="music" checked/>Music</label>
+            <label><input type="checkbox" name="hobbies" value="bike" checked/>Bike</label>
+            <label><input type="checkbox" name="hobbies" value="sport"/>Sport</label>
+        </div>
 
-    <br/>
-    <br/>
-
-    Hobbies:<br/>
-    <label><input type="checkbox" name="hobbies" value="movie" checked/>Movie</label>
-    <label><input type="checkbox" name="hobbies" value="music" checked/>Music</label>
-    <label><input type="checkbox" name="hobbies" value="bike" checked/>Bike</label>
-    <label><input type="checkbox" name="hobbies" value="sport"/>Sport</label>
-
-
-    <br/>
-    <input type="submit" value="submit">
-</form>
+        <input class="button-login" type="submit" value="Submit" style="margin-top: 8px">
+    </form>
+</div>
 
 <!-- end -->
 
