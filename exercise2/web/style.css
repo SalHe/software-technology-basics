@@ -45,7 +45,8 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: #3498db 2px solid;
+    border-bottom: #95a5a6 3px solid;
+    transition: all ease-in-out .2s;
 }
 
 .form-item input:hover,
@@ -56,7 +57,7 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: #2980b9 3px solid;
+    border-bottom-color: #3498db;
 }
 
 .form-item {
@@ -75,7 +76,7 @@
 
     background-color: #3498db;
     color: #ecf0f1;
-    border: none;
+    border: #3498db 1px solid;
     border-radius: 20px;
     padding: 5px 10px;
 
