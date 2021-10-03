@@ -1,6 +1,12 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Tomcat 8.5.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.71" ALTERNATIVE_JRE_ENABLED="false">
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
     <deployment>
+      <artifact name="lab-index:Web exploded">
+        <settings>
+          <option name="CONTEXT_PATH" value="" />
+        </settings>
+      </artifact>
       <artifact name="exercise1:Web exploded">
         <settings>
           <option name="CONTEXT_PATH" value="/exercise1" />
@@ -88,6 +94,7 @@
       <option name="BuildArtifacts" enabled="true">
         <artifact name="exercise1:Web exploded" />
         <artifact name="exercise2:Web exploded" />
+        <artifact name="lab-index:Web exploded" />
       </option>
     </method>
   </configuration>
