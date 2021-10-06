@@ -91,6 +91,7 @@
     <method v="2">
       <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
+        <artifact name="exercise1-1:Web exploded" />
         <artifact name="exercise1-2:Web exploded" />
         <artifact name="lab-index:Web exploded" />
       </option>
