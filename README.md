@@ -12,11 +12,11 @@
 
 实验题目及要求：[软件技术基础第一次实验课.pdf](./docs/软件技术基础第一次实验课.pdf)/[软件技术基础第一次实验课.docx](./docs/软件技术基础第一次实验课.docx)
 
-- 实验1：http://127.0.0.1:8080/exercise1
+- 实验1：http://127.0.0.1:8080/exercise1-1
   
   ![实验1效果图](./img/exercise1-1.gif)
 
-- 实验2：http://127.0.0.1:8080/exercise2
+- 实验2：http://127.0.0.1:8080/exercise1-2
   
   ![实验2效果图](./img/exercise1-2.gif)
 
@@ -48,12 +48,19 @@
 ### IDEA中配置Tomcat路径
 
 1. 因为Tomcat路径的不同，刚克隆完仓库可能会出现无法直接启动项目的情况。当在Tomcat右上角看到一个红叉的图标的时候，说明我们需要手动配置Tomcat路径。按下下拉箭头，点击`Edit Configurations...`：
+   
    ![无法正常启动项目](./img/edit_configuration.png)
+
 2. 在弹出的对话框中，可以看到`Tomcat 8.5.71`标红，说明配置不正常，我们点击`Configure`。
+
    ![进入配置Tomcat](./img/configure_tomcat.png)
+
 3. 为IDEA选择正确的Tomcat路径：
+   
    ![配置Tomcat路径](./img/select_tomcat_home.png)
    
    正确选择后可以看到IDEA会为我们正确识别出对应的Tomcat版本。
+
 4. 可以看到项目启动配置错误已经消除，可以正常启动了。
+
    ![配置OK](./img/configuration_ok.png)
