@@ -1,4 +1,4 @@
-# 《软件技术基础》实验代码库
+# 《软件技术基础》代码库
 
 ## 实验内容
 
@@ -19,6 +19,18 @@
 - 实验2：http://127.0.0.1:8080/exercise1-2
   
   ![实验2效果图](./img/exercise1-2.gif)
+
+## 作业内容
+
+### 10月25日作业：编写Servlet并使用
+
+- 基础版：http://localhost:8080/homework-servlet/simple.html
+
+  ![基础版效果图](./img/homework-servlet-simple.gif)
+
+- 进阶版：http://localhost:8080/homework-servlet/advanced.html
+
+  ![进阶版效果图](./img/homework-servlet-advanced.gif)
 
 ## 如何运行
 
