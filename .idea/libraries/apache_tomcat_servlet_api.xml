@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="apache.tomcat.servlet.api" type="repository">
+    <properties maven-id="org.apache.tomcat:tomcat-servlet-api:8.5.71" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-servlet-api/8.5.71/tomcat-servlet-api-8.5.71.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-servlet-api/8.5.71/tomcat-servlet-api-8.5.71-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
