@@ -35,7 +35,8 @@ public class HelloServlet extends HttpServlet {
                 "<br>" +
                 "<span>您的学号是：</span>" + idNumber +
                 "<br>" +
-                "<span>您是一个：</span>" + ("male".equals(gender) ? "男孩" : "女孩");
+                "<span>您是一个：</span>" + ("male".equals(gender) ? "男孩" : "女孩") +
+                "<img src='" + req.getServletContext().getContextPath() + "/img/" + gender + ".png' alt='" + gender + "' width='32' height='32'/>";
         writer.println(html);
     }
 }
