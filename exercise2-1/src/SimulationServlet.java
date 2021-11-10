@@ -18,6 +18,8 @@ public class SimulationServlet extends HttpServlet {
         httpServletResponse.setContentType("text/html");
         PrintWriter printWriter = httpServletResponse.getWriter();
         String str = httpServletRequest.getParameter("Submit");
+
+        // 创建小鱼
         if ((str != null) && (str.equals("Create a fish"))) {
             Simulation simulation = new Simulation(1, 10);
             Catfish catfish = new Catfish();
@@ -26,6 +28,8 @@ public class SimulationServlet extends HttpServlet {
             httpSession.setAttribute("simulation", simulation);
             return;
         }
+
+        // 是要更新小鱼
         Simulation simulation = (Simulation) httpSession.getAttribute("simulation");
         Catfish catfish = simulation.getCatfish(0);
         if (str != null && str.equals("right1"))

@@ -4,14 +4,14 @@ public class SimulationView {
         HtmlPage htmlPage = new HtmlPage();
         htmlPage.setTitle("Move Catfish Right");
         htmlPage.addText("<H2> Move Catfish Right</H2>");
-        HtmlImage htmlImage1 = new HtmlImage("", "right");//the image here is right-arrow.gif
+        HtmlImage htmlImage1 = new HtmlImage("resource/img/right-arrow.gif", "right");//the image here is right-arrow.gif
         String str = getImageButton("Submit", "right1", htmlImage1);
         HtmlTable htmlTable1 = new HtmlTable();
         htmlTable1.startRow();
         htmlTable1.addCell(str);
         htmlTable1.endRow();
         HtmlTable htmlTable2 = new HtmlTable(simulation.getMaxColumn());
-        HtmlImage htmlImage2 = new HtmlImage("", "No fish.");//the image here is blank.gif
+        HtmlImage htmlImage2 = new HtmlImage("resource/img/blank.gif", "No fish.");//the image here is blank.gif
         for (byte b = 1; b <= simulation.getMaxRow(); b++) {
             htmlTable2.startRow();
             for (byte b1 = 1; b1 <= simulation.getMaxColumn(); b1++) {
