@@ -8,6 +8,8 @@
 
 ![项目索引页](./img/lab-index.gif)
 
+图中的实验索引随代码更新而更新，不再更新图片。
+
 ### 第一次实验
 
 实验题目及要求：[软件技术基础第一次实验课.pdf](./docs/软件技术基础第一次实验课.pdf)/[软件技术基础第一次实验课.docx](./docs/软件技术基础第一次实验课.docx)
@@ -19,6 +21,20 @@
 - 实验2：http://127.0.0.1:8080/exercise1-2
   
   ![实验2效果图](./img/exercise1-2.gif)
+
+### 第二次实验
+
+实验题目及要求：[软件技术基础第二次实验课.pdf](./docs/软件技术基础第二次实验课.pdf)/[软件技术基础第二次实验课.docx](./docs/软件技术基础第二次实验课.docx)
+
+- 实验1：http://127.0.0.1:8080/exercise2-1
+  
+  ![实验1效果图](./img/exercise2-1.gif)
+
+- 实验2：http://127.0.0.1:8080/exercise2-2
+  
+  ![实验2效果图 - initialWorldFish.html](./img/exercise2-2-init.gif)
+
+  ![实验2效果图 - MySimulation.html](./img/exercise2-2-my-sim.gif)
 
 ## 作业内容
 
