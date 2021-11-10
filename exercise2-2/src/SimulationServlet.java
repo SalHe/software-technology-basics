@@ -19,7 +19,7 @@ public class SimulationServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse) throws ServletException, IOException {
-        // 下面的代码仅对命名、循环编写方式做了变更
+        paramHttpServletResponse.setCharacterEncoding("utf-8");
 
         int numTimeBlocks = 0;
         HttpSession httpSession = paramHttpServletRequest.getSession();
@@ -44,7 +44,7 @@ public class SimulationServlet extends HttpServlet {
             }
             if (numTimeBlocks > 0)
                 paramHttpServletResponse.setHeader("Refresh", "1");
-            printWriter.print(SimulationView.getHtml(simulation1));
+            printWriter.print(SimulationView.getHtml(simulation1, "即将开始"));
             httpSession.setAttribute("simulation", simulation1);
             httpSession.setAttribute("totalTimeBlocksToSimulate", numTimeBlocksString);
             return;
@@ -55,9 +55,10 @@ public class SimulationServlet extends HttpServlet {
         String totalTimeBlocksToSimulateString = (String) httpSession.getAttribute("totalTimeBlocksToSimulate");
         if (totalTimeBlocksToSimulateString != null)
             numTimeBlocks = Integer.parseInt(totalTimeBlocksToSimulateString);
-        if (simulation.getTime() < numTimeBlocks - 1) // 是否将时间迭代到需要的时间了，如果没有，让网页自动刷新
+        boolean inProgress = simulation.getTime() < numTimeBlocks - 1;
+        if (inProgress) // 是否将时间迭代到需要的时间了，如果没有，让网页自动刷新
             paramHttpServletResponse.setHeader("Refresh", "1");
         simulation.simulateATimeBlock();
-        printWriter.print(SimulationView.getHtml(simulation));
+        printWriter.print(SimulationView.getHtml(simulation, inProgress ? ("当前时间：" + simulation.getTime()) : "已结束"));
     }
 }

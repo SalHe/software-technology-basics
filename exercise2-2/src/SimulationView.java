@@ -1,9 +1,10 @@
 import java.util.Vector;
+
 public class SimulationView {
-    public static String getHtml(Simulation paramSimulation) {
+    public static String getHtml(Simulation paramSimulation, String extraTips) {
         HtmlPage htmlPage = new HtmlPage();
         htmlPage.setTitle("Fish Simulation");
-        htmlPage.addText("<H2>Fish Simulation</H2>");
+        htmlPage.addText("<H2>Fish Simulation</H2>" + (extraTips == null ? "" : ("(" + extraTips + ")")));
         HtmlTable htmlTable = new HtmlTable(10);
         HtmlImage htmlImage = new HtmlImage("resource/img/blank.gif", "Maybe algae. No other life.");//This image is blank.gif
         for (int i = paramSimulation.getFirstRow(); i <= paramSimulation.getLastRow(); i++) {
@@ -16,7 +17,7 @@ public class SimulationView {
                 byte b = 0;
                 for (; b < vector.size();
                      b++) {
-                    LivingBeing livingBeing = (LivingBeing)vector.get(b);
+                    LivingBeing livingBeing = (LivingBeing) vector.get(b);
                     htmlImage1 = new HtmlImage(livingBeing.getImage(), "Catfish");
                 }
                 htmlTable.addCell(str, htmlImage1.buildHtml());
