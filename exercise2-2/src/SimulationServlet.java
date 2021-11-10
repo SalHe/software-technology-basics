@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet(name = "SimulationServlet",urlPatterns = "/SimulationServlet")
-public class SimulationServlet extends HttpServlet{
+
+@WebServlet(name = "SimulationServlet", urlPatterns = "/SimulationServlet")
+public class SimulationServlet extends HttpServlet {
     private static final int DEBUG = 10;
 
     public void doGet(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse) throws ServletException, IOException {
@@ -18,37 +19,43 @@ public class SimulationServlet extends HttpServlet{
     }
 
     public void doPost(HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse) throws ServletException, IOException {
-        int i = 0;
+        // 下面的代码仅对命名、循环编写方式做了变更
+
+        int numTimeBlocks = 0;
         HttpSession httpSession = paramHttpServletRequest.getSession();
         paramHttpServletResponse.setContentType("text/html");
         PrintWriter printWriter = paramHttpServletResponse.getWriter();
-        String str1 = paramHttpServletRequest.getParameter("numTimeBlocks");
-        if (str1 != null) {
-            i = Integer.parseInt(str1);
+        String numTimeBlocksString = paramHttpServletRequest.getParameter("numTimeBlocks");
+
+        // 判断是否来自于 initialWorldFish.html 提交的
+        // 如果是，那么下面的参数不为null。
+        if (numTimeBlocksString != null) {
+            numTimeBlocks = Integer.parseInt(numTimeBlocksString);
             Simulation simulation1 = new Simulation(0, 0, 9, 9);
-            Map map = paramHttpServletRequest.getParameterMap();
-            Set set = map.keySet();
-            Iterator iterator = set.iterator();
-            while (iterator.hasNext()) {
-                String str = (String)iterator.next();
+            Map<String, String[]> parameters = paramHttpServletRequest.getParameterMap();
+            Set<String> set = parameters.keySet();
+            for (String str : set) {
                 if (str.equals("Submit") || str.equals("numTimeBlocks"))
                     continue;
-                String[] arrayOfString = (String[])map.get(str);
-                for (byte b = 0; b < arrayOfString.length; b++)
-                    LivingBeing.createLivingBeing(simulation1, str, arrayOfString[b]);
+
+                // 找到catfish参数，是个数组
+                String[] arrayOfString = parameters.get(str);
+                for (String s : arrayOfString) LivingBeing.createLivingBeing(simulation1, str, s);
             }
-            if (i > 0)
+            if (numTimeBlocks > 0)
                 paramHttpServletResponse.setHeader("Refresh", "1");
             printWriter.print(SimulationView.getHtml(simulation1));
             httpSession.setAttribute("simulation", simulation1);
-            httpSession.setAttribute("totalTimeBlocksToSimulate", str1);
+            httpSession.setAttribute("totalTimeBlocksToSimulate", numTimeBlocksString);
             return;
         }
-        Simulation simulation = (Simulation)httpSession.getAttribute("simulation");
-        String str2 = (String)httpSession.getAttribute("totalTimeBlocksToSimulate");
-        if (str2 != null)
-            i = Integer.parseInt(str2);
-        if (simulation.getTime() < i - 1)
+
+        // 是来自自动刷新
+        Simulation simulation = (Simulation) httpSession.getAttribute("simulation");
+        String totalTimeBlocksToSimulateString = (String) httpSession.getAttribute("totalTimeBlocksToSimulate");
+        if (totalTimeBlocksToSimulateString != null)
+            numTimeBlocks = Integer.parseInt(totalTimeBlocksToSimulateString);
+        if (simulation.getTime() < numTimeBlocks - 1) // 是否将时间迭代到需要的时间了，如果没有，让网页自动刷新
             paramHttpServletResponse.setHeader("Refresh", "1");
         simulation.simulateATimeBlock();
         printWriter.print(SimulationView.getHtml(simulation));

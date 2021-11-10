@@ -1,8 +1,8 @@
 public abstract class LivingBeing {
     public static void createLivingBeing(Simulation paramSimulation, String paramString1, String paramString2) {
         int i = Integer.parseInt(paramString2);
-        int j = i / 100;
-        int k = i - 100 * j;
+        int j = i / 100;        // 行
+        int k = i - 100 * j;    // 列
         if (paramString1.equals("catfish"))
             paramSimulation.addLivingBeing(new Catfish(j, k, paramSimulation));
     }

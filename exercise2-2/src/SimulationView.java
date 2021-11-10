@@ -5,7 +5,7 @@ public class SimulationView {
         htmlPage.setTitle("Fish Simulation");
         htmlPage.addText("<H2>Fish Simulation</H2>");
         HtmlTable htmlTable = new HtmlTable(10);
-        HtmlImage htmlImage = new HtmlImage("", "Maybe algae. No other life.");//This image is blank.gif
+        HtmlImage htmlImage = new HtmlImage("resource/img/blank.gif", "Maybe algae. No other life.");//This image is blank.gif
         for (int i = paramSimulation.getFirstRow(); i <= paramSimulation.getLastRow(); i++) {
             htmlTable.startRow();
             for (int j = paramSimulation.getFirstColumn(); j <= paramSimulation.getLastColumn();

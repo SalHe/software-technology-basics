@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Catfish extends LivingBeing {
 
     /**
@@ -56,7 +58,7 @@ public class Catfish extends LivingBeing {
         this.deadOrAlive = this.ALIVE;
         this.age = 0;
         this.energy = 10;
-        this.imageFileName = "";//This image is CatFish-right.gif
+        this.imageFileName = "resource/img/CatFish-right.gif";//This image is CatFish-right.gif
         this.row = paramInt1;
         this.column = paramInt2;
     }
@@ -67,8 +69,7 @@ public class Catfish extends LivingBeing {
      * @return - the row of the catfish's location.
      */
     public int getRow() {
-        // TODO 实现代码
-        return 0;
+        return row;
     }
 
     /**
@@ -120,8 +121,7 @@ public class Catfish extends LivingBeing {
      * @return <code>true</code> if dead. <code>false</code>, otherwise.
      */
     public boolean isDead() {
-		// TODO 实现代码
-		return false;
+        return Objects.equals(this.deadOrAlive, this.DEAD);
     }
 
     /**
@@ -129,14 +129,16 @@ public class Catfish extends LivingBeing {
      * Consumes some energy.
      */
     private void swimIfPossible() {
-        // TODO Please complete this method.(~1line)
+        // Please complete this method.(~1line)
 
 
         // Consume ENERGY_TO_SWIM units of energy to swim.
-
+        energy -= ENERGY_TO_SWIM;
 
         // Check if there is any energy left after consumption(~2/3lines)
-
+        if (energy <= 0) {
+            return;
+        }
 
         //END
 
@@ -153,14 +155,24 @@ public class Catfish extends LivingBeing {
 
 
         //END
-
+        int direction = simulation.getRand().nextInt(4);
+        // 上右下左
+        final int[] dx = {0, 1, 0, -1};
+        final int[] dy = {-1, 0, 1, 0};
+        row += dy[direction];
+        column += dx[direction];
+        // 防止小鱼游出“池塘”
+        row = Math.max(row, simulation.getFirstRow());
+        row = Math.min(row, simulation.getLastRow());
+        column = Math.max(column, simulation.getFirstColumn());
+        column = Math.min(column, simulation.getLastColumn());
     }
 
     /**
      * Catfish lives its life. Dies if it has no energy left.
      */
     public void liveALittle() {
-        // TODO Please complete this method.(5~6lines)
+        // Please complete this method.(5~6lines)
         /*If there is no energy left, send a "die" message to this catfish
         Increment the age of the Catfish by 1
         Try to swim by sending a "swimIfPossible" message
@@ -168,5 +180,10 @@ public class Catfish extends LivingBeing {
 
 
         //END
+        if (energy <= 0) {
+            age++;
+            die();
+        }
+        swimIfPossible();
     }
 }
