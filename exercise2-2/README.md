@@ -10,6 +10,9 @@
 - [SimulationView.java](./src/SimulationView.java): 一个负责将`Simulation`内的鱼池和小鱼借助Html节点类生成展示用的HTML代码的工具类，供`Servlet`使用。
 - [MySimulation.java](./src/MySimulation.java): 一个能将提交过来的鱼池初始态复现，让用户进一步修改鱼池初始态并进入模拟的`Servlet`，是一个确认页面。
 
+
 - [initialWorldFish.html](./web/initialWorldFish.html): 负责与`SimulationServlet`打交道完成鱼池的创建。写代码为`form`指定`action`和`method`。
 - [MySimulation.html](./web/MySimulation.html): 负责与`MySimulation`(一个Servlet)打交道完成鱼池状态的填写并进一步确认，最后再进行模拟。写代码为`form`
   指定`action`和`method`。
+- [initialWorldFish.html](./web/initialWorldFish.html)与[MySimulation.html](./web/MySimulation.html)的不同:
+  两者都提供了一个选择小鱼出生点的表格，但是initialWorldFish.html是直接将出生点提交并立即开始模拟小鱼的生存；但是MySimulation.html会展示出一样出生点安排的表，然后再点击按钮才开始模拟小鱼生存，是一个实现给用户确认小鱼出生点的功能的页面。
