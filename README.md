@@ -36,6 +36,26 @@
 
   ![实验2效果图 - MySimulation.html](./img/exercise2-2-my-sim.gif)
 
+### 第三次实验
+
+实验题目及要求：
+
+- 实验1：[第三次实验Part1.pdf](./docs/第三次实验Part1.pdf)/[第三次实验Part1.docx](./docs/第三次实验Part1.docx)
+
+- 实验2：[第三次实验Part2.pdf](./docs/第三次实验Part2.pdf)/[第三次实验Part2.docx](./docs/第三次实验Part2.docx)
+
+实验代码运行效果截图：
+
+- 实验1：（无对应网页）
+
+  ![实验1效果图](./img/exercise3-1.png)
+
+- 实验2：
+
+  ![实验2效果图 - OOGallery](./img/exercise3-2.gif)
+
+  上述效果图可能由于动物和花的图片太大导致不太好看到背景，所以建议可以运行查看效果。
+
 ## 作业内容
 
 ### 10月25日作业：编写Servlet并使用
