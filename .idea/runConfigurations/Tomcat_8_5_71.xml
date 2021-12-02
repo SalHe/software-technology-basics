@@ -31,6 +31,11 @@
           <option name="CONTEXT_PATH" value="/exercise2-2" />
         </settings>
       </artifact>
+      <artifact name="exercise3-2:Web exploded">
+        <settings>
+          <option name="CONTEXT_PATH" value="/exercise3-2" />
+        </settings>
+      </artifact>
     </deployment>
     <server-settings>
       <option name="BASE_DIRECTORY_NAME" value="1217e07b-c013-47b5-80fb-071056e7745c" />
@@ -112,6 +117,7 @@
         <artifact name="homework-servlet:Web exploded" />
         <artifact name="exercise2-1:Web exploded" />
         <artifact name="exercise2-2:Web exploded" />
+        <artifact name="exercise3-2:Web exploded" />
       </option>
     </method>
   </configuration>
